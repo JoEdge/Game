@@ -71,9 +71,17 @@ var princess = new Bad ({
   health: 110,
 });
 
+//Click photos
+$('.pic a').click(function(opt) {
+    opt.preventDefault();
+    $('.dog').empty().append(
+        $('<img>', {src: this.href})
+    );
+});
 
-//Click button
-$('button').on('click', function() {
-
-
+$('.tic a').click(function(opt) {
+    opt.preventDefault();
+    $('.cat').empty().append(
+        $('<img>', {src: this.href})
+    );
 });
