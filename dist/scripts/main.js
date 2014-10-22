@@ -1,5 +1,3 @@
-
-
 //Constructors for players
 var Good = function(options) {
   var options = options || {};
@@ -17,42 +15,63 @@ var Bad = function(options) {
     this.health = options.health || 100;
 };
 
-//instances for GOOD guys
-
+//Instances for GOOD guys
 var sam = new Good ({
   name: "Sam",
-  breed: "Golden Retriever"
+  breed: "Golden Retriever",
   motto: "Run Wild",
 });
 
 var lucy = new Good ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "I am all that matters."
+  motto: "I am all that matters.",
+  health: 150,
 });
 
 var riley = new Good ({
   name: "Riley",
   breed: "Shi-Tzu",
-  motto: "I look small, but fight big."
+  motto: "I look small, but fight big.",
 });
 
-//instances for BAD guys
-
+//Instances for BAD guys
 var sheba = new Bad ({
   name: "Sheba",
-  breed: "Persian"
+  breed: "Persian",
   motto: "Finicky is fine",
 });
 
-var mr_fluffy = new Bad ({
-  name: "Mr. Fluffy",
-  breed: "Alley Cat"
-  motto: "Pure bloods suck."
+var mr_snuggles = new Bad ({
+  name: "Mr. Snuggles",
+  breed: "Alley Cat",
+  motto: "Pure bloods suck.",
 });
 
-var queenie = new Bad ({
-  name: "Queenie",
-  breed: "Maine Coon"
-  motto: "Kill them all and let God decide."
+var princess = new Bad ({
+  name: "Princess Fluffy-Pants",
+  breed: "Maine Coon",
+  motto: "Kill them all and let God decide.",
+  health: 110,
+});
+
+//Prototype for attack
+Good.prototype.attack = function(dog) {
+  dog.health = dog.health - _.random(0, 25);
+  if (dog.health<0) {
+    return "dead";
+  }
+};
+
+Bad.prototype.attack = function(cat) {
+  cat.health = cat.health - _.random(0, 25);
+  if (cat.health<0) {
+    return "dead";
+  }
+};
+
+//Click button
+$('button').on('click', function() {
+
+
 });
