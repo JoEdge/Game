@@ -25,17 +25,76 @@ body {
     line-height: 1;
     letter-spacing: -1px;
   }
+
+.left {
+  float: left;
+  width: 200px;
+  height: 500px;
+
   .dog {
     float: left;
     width: 200px;
-    height: 300px;
-    background-color: yellow;
-  }
-  .cat {
-    float: right;
-    width: 200px;
-    height: 300px;
+    height: 200px;
+    margin-left: 106px;
     background-color: yellow;
   }
 
+  .goodies {
+    float: left;
+    width: 400px;
+    height: 100px;
+    margin-top: 20px;
+
+    li {
+      float: left;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+      list-style: none;
+      background-color: grey;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+.right {
+  float: right;
+  width: 200px;
+  height: 500px;
+
+  .cat {
+    float: right;
+    width: 200px;
+    height: 200px;
+    margin-right: 106px;
+    background-color: yellow;
+  }
+
+  .baddies {
+    float: right;
+    width: 400px;
+    height: 100px;
+    margin-top: 20px;
+
+    li {
+      float: left;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+      list-style: none;
+      background-color: grey;
+
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
 }

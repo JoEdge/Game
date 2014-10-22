@@ -5,6 +5,14 @@ var Good = function(options) {
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
+
+    //Prototype for attack
+    Good.prototype.attack = function(dog) {
+      dog.health = dog.health - _.random(0, 25);
+      if (dog.health<0) {
+        return "dead";
+      }
+    };
 };
 
 var Bad = function(options) {
@@ -13,6 +21,14 @@ var Bad = function(options) {
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
+
+    //Prototype for attack
+    Bad.prototype.attack = function(cat) {
+      cat.health = cat.health - _.random(0, 25);
+      if (cat.health<0) {
+        return "dead";
+      }
+    };
 };
 
 //Instances for GOOD guys
@@ -55,20 +71,6 @@ var princess = new Bad ({
   health: 110,
 });
 
-//Prototype for attack
-Good.prototype.attack = function(dog) {
-  dog.health = dog.health - _.random(0, 25);
-  if (dog.health<0) {
-    return "dead";
-  }
-};
-
-Bad.prototype.attack = function(cat) {
-  cat.health = cat.health - _.random(0, 25);
-  if (cat.health<0) {
-    return "dead";
-  }
-};
 
 //Click button
 $('button').on('click', function() {
