@@ -127,6 +127,14 @@ $('#fight').on('click', function(event){
   if (kittie.health > 0) {
     kittie.attack(doggie);
   }else if (kittie.health <= 0){
-    return "Dead"    
+    kittie.health="Dead Cat";
   }
+
+  kittie.attack(doggie);
+  if (doggie.health > 0) {
+    doggie.attack(kittie);
+  }else if (doggie.health <= 0){
+    doggie.health="Dead Dog";
+  }
+
 });
