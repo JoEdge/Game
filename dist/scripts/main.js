@@ -1,10 +1,18 @@
 //Constructors for players
+
 var Good = function(options) {
   var options = options || {};
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
+
+};
+
+    //Prototype for info
+    Good.prototype.info = function(dog){
+  return 'My name is ' + this.name + '. I am a ' + this.breed + ', and my motto is: ' + this.motto;
+};
 
     //Prototype for attack
     Good.prototype.attack = function(dog) {
@@ -13,7 +21,6 @@ var Good = function(options) {
         return "dead";
       }
     };
-};
 
 var Bad = function(options) {
   var options = options || {};
@@ -21,6 +28,12 @@ var Bad = function(options) {
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
+
+    //Prototype for info
+    Bad.prototype.info = function(cat){
+      return this.name + ', ' + this.breed + ', ' + this.motto;
+
+};
 
     //Prototype for attack
     Bad.prototype.attack = function(cat) {
@@ -41,7 +54,7 @@ var sam = new Good ({
 var lucy = new Good ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "I am all that matters.",
+  motto: "You are tough. I am tougher.",
   health: 150,
 });
 
@@ -71,7 +84,7 @@ var princess = new Bad ({
   health: 110,
 });
 
-//Click photos
+//Click thumbnail photos to appear in larger div
 $('.pic a').click(function(opt) {
     opt.preventDefault();
     $('.dog').empty().append(
