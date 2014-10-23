@@ -26,13 +26,23 @@ var Good = function(options) {
     };
 
     this.stats = function(dog){
-  return 'Name: ' + this.name + 'Breed: ' + this.breed + 'Motto: ' + this.motto;
+      return 'NAME: ' + this.name + '</br>'+ 'BREED: ' + this.breed + '</br>' + 'MOTTO: ' + this.motto;
     };
 
 $('#golden').hover(function(event) {
-    event.preventDefault();
-    $('.goldie').empty().append(sam.stats());
-    });
+   event.preventDefault();
+    $('.d_stats').empty().append(sam.stats());
+  });
+
+$('#lab').hover(function(event) {
+   event.preventDefault();
+    $('.d_stats').empty().append(lucy.stats());
+  });
+
+$('#shitzu').hover(function(event) {
+   event.preventDefault();
+    $('.d_stats').empty().append(riley.stats());
+  });
 
 };
 
@@ -48,8 +58,23 @@ var Bad = function(options) {
     };
 
     this.stats = function(cat){
-      return this.name + ', ' + this.breed + ', ' +     this.motto;
-};
+      return 'NAME: ' + this.name + '</br>'+ 'BREED: ' + this.breed + '</br>' + 'MOTTO: ' + this.motto;
+    };
+
+$('#persian').hover(function(event) {
+   event.preventDefault();
+    $('.c_stats').empty().append(sheba.stats());
+  });
+
+$('#alley').hover(function(event) {
+   event.preventDefault();
+    $('.c_stats').empty().append(mr_snuggles.stats());
+  });
+
+$('#coon').hover(function(event) {
+   event.preventDefault();
+    $('.c_stats').empty().append(princess.stats());
+  });
 
 };
 

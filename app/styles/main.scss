@@ -28,7 +28,7 @@ body {
 
 .left {
   float: left;
-  width: 200px;
+  width: 400px;
   height: 500px;
 //large dog image
   .dog {
@@ -53,8 +53,6 @@ body {
     li {
       float: left;
       display: inline-block;
-      width: 100px;
-      height: 300px;
       margin-right: 20px;
       list-style: none;
 
@@ -69,7 +67,7 @@ body {
 
 .right {
   float: right;
-  width: 200px;
+  width: 400px;
   height: 500px;
 //large cat image
   .cat {
