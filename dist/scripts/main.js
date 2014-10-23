@@ -118,25 +118,25 @@ var princess = new Bad ({
   health: 110,
 });
 
-//Prepare your players
+//choose your players
 var doggie, kittie;
 
 $('.pic').on('click', function(event){
   event.preventDefault();
 
-  var li_breed = $(this).attr('id');//test
-  console.log(li_breed);
+  var li_breed = $(this).attr('id');
 
   doggie = new Good ({
     breed: li_breed
   });
+
+
 });
 
 $('.tic').on('click', function(event){
     event.preventDefault();
 
-    var li_breed = $(this).attr('id');//test
-    console.log(li_breed);
+    var li_breed = $(this).attr('id');
 
   kittie = new Bad ({
     breed: li_breed
