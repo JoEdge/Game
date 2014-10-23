@@ -7,19 +7,21 @@ body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+  background: url(http://www.tatouagedesigns.com/photos/22164P-2T.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .game {
   margin: 50px auto 0 auto;
   width: 1000px;
-  overflow: auto;
+  overflow: hidden;
   font-size: 16px;
-  font-weight: 200;
   text-align: center;
   line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
   padding: 60px;
+
   h1 {
     font-size: 60px;
     line-height: 1;
@@ -28,8 +30,7 @@ body {
 
 .left {
   float: left;
-  width: 400px;
-  height: 500px;
+  width: 350px;
 //large dog image
   .dog {
     float: left;
@@ -43,6 +44,7 @@ body {
       border-radius: 50px;
     }
   }
+
 //thumbnail dog images
   .goodies {
     float: left;
@@ -58,15 +60,16 @@ body {
       img {
         width: 100px;
         height: 100px;
-        border-radius: 50px;
+        border-radius: 30px;
       }
     }
   }
+
 }
 
 .right {
   float: right;
-  width: 400px;
+  width: 350px;
   height: 500px;
 //large cat image
   .cat {
@@ -96,7 +99,7 @@ body {
       img {
         width: 100px;
         height: 100px;
-        border-radius: 50px;
+        border-radius: 30px;
       }
     }
   }

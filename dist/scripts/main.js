@@ -2,9 +2,10 @@
 //Click thumbnail photos to appear in larger div
 $('.pic a').click(function(event) {
     event.preventDefault();
-    $('.dog').empty().append(
+    $('.dog').empty().append (
         $('<img>', {src: this.href})
     );
+      $('.d_stats').slideUp();
 });
 
 $('.tic a').click(function(event) {
@@ -12,6 +13,7 @@ $('.tic a').click(function(event) {
     $('.cat').empty().append(
         $('<img>', {src: this.href})
     );
+      $('.c_stats').slideUp();
 });
 
 //Constructor for dogs
@@ -151,21 +153,21 @@ $('.tic').on('click', function(event){
 $('#fight').on('click', function(event){
   event.preventDefault();
 
+$('#dogster').empty().append(doggie.name," ", doggie.health);
+$('#catster').empty().append(kittie.name," ", kittie.health);
+
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
   }else if (kittie.health <= 0){
-    kittie.health="Dead Cat";
-  }
+    kittie.health=" Needs a Vet!";
+  };
 
   kittie.attack(doggie);
   if (doggie.health > 0) {
     doggie.attack(kittie);
   }else if (doggie.health <= 0){
-    doggie.health="Dead Dog";
-  }
-
-$('#dogster').empty().append(doggie.name," ", doggie.health);
-$('#catster').empty().append(kittie.name," ",kittie.health);
+    doggie.health=" Needs a Vet!";
+  };
 
 });
