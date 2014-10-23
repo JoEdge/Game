@@ -124,9 +124,11 @@ var doggie, kittie;
 $('.pic').on('click', function(event){
   event.preventDefault();
 
+  var li_name = $(this).attr('name');
   var li_breed = $(this).attr('id');
 
   doggie = new Good ({
+    name: li_name,
     breed: li_breed
   });
 
@@ -135,9 +137,11 @@ $('.pic').on('click', function(event){
 $('.tic').on('click', function(event){
     event.preventDefault();
 
+    var li_name = $(this).attr('name');
     var li_breed = $(this).attr('id');
 
   kittie = new Bad ({
+    name: li_name,
     breed: li_breed
   });
 
@@ -161,7 +165,7 @@ $('#fight').on('click', function(event){
     doggie.health="Dead Dog";
   }
 
-$('#dogster').empty().append(doggie.health);
-$('#catster').empty().append(kittie.health);
+$('#dogster').empty().append(doggie.name," ", doggie.health);
+$('#catster').empty().append(kittie.name," ",kittie.health);
 
 });
