@@ -1,47 +1,56 @@
-//Constructors for players
 
+//Click thumbnail photos to appear in larger div
+$('.pic a').click(function(event) {
+    event.preventDefault();
+    $('.dog').empty().append(
+        $('<img>', {src: this.href})
+    );
+});
+
+$('.tic a').click(function(event) {
+    event.preventDefault();
+    $('.cat').empty().append(
+        $('<img>', {src: this.href})
+    );
+});
+
+//Constructor for dogs
 var Good = function(options) {
   var options = options || {};
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
-
-};
-
-    //Prototype for info
-    Good.prototype.info = function(dog){
-  return 'My name is ' + this.name + '. I am a ' + this.breed + ', and my motto is: ' + this.motto;
-};
-
-    //Prototype for attack
-    Good.prototype.attack = function(dog) {
-      dog.health = dog.health - _.random(0, 25);
-      if (dog.health<0) {
-        return "dead";
-      }
+    this.attack = function(cat) {
+     return cat.health = cat.health - _.random (0,25);
     };
 
+    this.stats = function(dog){
+  return 'Name: ' + this.name + 'Breed: ' + this.breed + 'Motto: ' + this.motto;
+    };
+
+$('#golden').hover(function(event) {
+    event.preventDefault();
+    $('.goldie').empty().append(sam.stats());
+    });
+
+};
+
+//constructor for cats
 var Bad = function(options) {
   var options = options || {};
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = options.health || 100;
+    this.attack = function(dog) {
+      return dog.health = dog.health - _.random(1,25);
+    };
 
-    //Prototype for info
-    Bad.prototype.info = function(cat){
-      return this.name + ', ' + this.breed + ', ' + this.motto;
-
+    this.stats = function(cat){
+      return this.name + ', ' + this.breed + ', ' +     this.motto;
 };
 
-    //Prototype for attack
-    Bad.prototype.attack = function(cat) {
-      cat.health = cat.health - _.random(0, 25);
-      if (cat.health<0) {
-        return "dead";
-      }
-    };
 };
 
 //Instances for GOOD guys
@@ -61,7 +70,7 @@ var lucy = new Good ({
 var riley = new Good ({
   name: "Riley",
   breed: "Shi-Tzu",
-  motto: "I look small, but fight big.",
+  motto: "Kill or be killed.",
 });
 
 //Instances for BAD guys
@@ -80,21 +89,37 @@ var mr_snuggles = new Bad ({
 var princess = new Bad ({
   name: "Princess Fluffy-Pants",
   breed: "Maine Coon",
-  motto: "Kill them all and let God decide.",
+  motto: "Kill them all and let God sort 'em out.",
   health: 110,
 });
 
-//Click thumbnail photos to appear in larger div
-$('.pic a').click(function(opt) {
-    opt.preventDefault();
-    $('.dog').empty().append(
-        $('<img>', {src: this.href})
-    );
+//Prepare your players
+var doggie, kittie;
+
+$('.pic').on('click', function(event){
+  event.preventDefault();
+
+  var li_name = $(this).attr('id');//test
+  console.log(li_name);
+
+  doggie = new Good ({
+    name: li_name
+  });
+}); 
+
+$('.tic').on('click', function(event){
+    event.preventDefault();
+
+    var li_name = $(this).attr('id');//test
+    console.log(li_name);
+
+  kittie = new Bad ({
+    name: li_name
+  });
+
 });
 
-$('.tic a').click(function(opt) {
-    opt.preventDefault();
-    $('.cat').empty().append(
-        $('<img>', {src: this.href})
-    );
+//Start the fight
+$('#fight').on('click', function(event){
+  event.preventDefault();
 });
