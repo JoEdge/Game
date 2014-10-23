@@ -99,22 +99,22 @@ var doggie, kittie;
 $('.pic').on('click', function(event){
   event.preventDefault();
 
-  var li_name = $(this).attr('id');//test
-  console.log(li_name);
+  var li_breed = $(this).attr('id');//test
+  console.log(li_breed);
 
   doggie = new Good ({
-    name: li_name
+    breed: li_breed
   });
-}); 
+});
 
 $('.tic').on('click', function(event){
     event.preventDefault();
 
-    var li_name = $(this).attr('id');//test
-    console.log(li_name);
+    var li_breed = $(this).attr('id');//test
+    console.log(li_breed);
 
   kittie = new Bad ({
-    name: li_name
+    breed: li_breed
   });
 
 });
@@ -122,4 +122,11 @@ $('.tic').on('click', function(event){
 //Start the fight
 $('#fight').on('click', function(event){
   event.preventDefault();
+
+  doggie.attack(kittie);
+  if (kittie.health > 0) {
+    kittie.attack(doggie);
+  }else if (kittie.health <= 0){
+    return "Dead"    
+  }
 });
