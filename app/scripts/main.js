@@ -130,7 +130,6 @@ $('.pic').on('click', function(event){
     breed: li_breed
   });
 
-
 });
 
 $('.tic').on('click', function(event){
@@ -161,5 +160,8 @@ $('#fight').on('click', function(event){
   }else if (doggie.health <= 0){
     doggie.health="Dead Dog";
   }
+
+$('#dogster').empty().append(doggie.health);
+$('#catster').empty().append(kittie.health);
 
 });
