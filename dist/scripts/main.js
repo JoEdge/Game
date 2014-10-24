@@ -5,7 +5,7 @@ $('.pic a').click(function(event) {
     $('.dog').empty().append (
         $('<img>', {src: this.href})
     );
-      $('.d_stats').slideUp();
+      $('.d_stats').toggleClass('animated flipOutX');
 });
 
 $('.tic a').click(function(event) {
@@ -13,7 +13,7 @@ $('.tic a').click(function(event) {
     $('.cat').empty().append(
         $('<img>', {src: this.href})
     );
-      $('.c_stats').slideUp();
+      $('.c_stats').toggleClass('animated flipOutX');
 });
 
 //Constructor for dogs
@@ -140,20 +140,17 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
-  } else if (kittie.health <= 0){
-      $('#catster').empty().append(kittie.name," Needs a Vet!");
-      $('#fight').toggleClass('animated flipOutX');
-      $('#dogster').empty().append(doggie.name," Wins!");
-      $('.dog').toggleClass('animated flip');
-      $('.cat').toggleClass('animated hinge');
-    };
-
-  kittie.attack(doggie);
-    if (doggie.health <= 0){
+    }else if (doggie.health <= 0){
       $('#dogster').empty().append(doggie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
       $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
+    }else if (kittie.health <= 0){
+      $('#catster').empty().append(kittie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
+      $('#dogster').empty().append(doggie.name," Wins!");
+      $('.dog').toggleClass('animated flip');
+      $('.cat').toggleClass('animated hinge');
     };
 });
