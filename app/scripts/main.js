@@ -16,7 +16,7 @@ $('.tic a').click(function(event) {
       $('.c_stats').toggleClass('animated flipOutX');
 });
 
-//Constructor for dogs
+//Constructor for dogs and cat instances
 var Animal = function(options) {
   var options = options || {};
     this.name = options.name;
@@ -140,13 +140,15 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
-    }else if (doggie.health <= 0){
+
+    }else if (doggie.health <= 0) {
       $('#dogster').empty().append(doggie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
       $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
-    }else if (kittie.health <= 0){
+
+    }else if (kittie.health <= 0) {
       $('#catster').empty().append(kittie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#dogster').empty().append(doggie.name," Wins!");
