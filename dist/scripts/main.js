@@ -22,7 +22,7 @@ var Good = function(options) {
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
-    this.health = options.health || 100;
+    this.health = 100;
     this.attack = function(cat) {
      return cat.health = cat.health - _.random (0,25);
     };
@@ -54,9 +54,9 @@ var Bad = function(options) {
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
-    this.health = options.health || 100;
+    this.health = 100;
     this.attack = function(dog) {
-      return dog.health = dog.health - _.random(1,25);
+      return dog.health = dog.health - _.random(0,25);
     };
 
     this.stats = function(cat){
@@ -84,14 +84,13 @@ $('#coon').hover(function(event) {
 var sam = new Good ({
   name: "Sam",
   breed: "Golden Retriever",
-  motto: "Run Wild",
+  motto: "You are tough. I am tougher.",
 });
 
 var lucy = new Good ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "You are tough. I am tougher.",
-  health: 150,
+  motto: "I am the Alpha and the Omega.",
 });
 
 var riley = new Good ({
@@ -117,7 +116,6 @@ var princess = new Bad ({
   name: "Princess Fluffy-Pants",
   breed: "Maine Coon",
   motto: "Kill them all and let God sort 'em out.",
-  health: 110,
 });
 
 //choose your players
@@ -159,15 +157,18 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
-  }else if (kittie.health <= 0){
-    kittie.health=" Needs a Vet!";
-  };
+  } else if (kittie.health <= 0){
+      $('#catster').empty().append(kittie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
+      $('#dogster').empty().append(doggie.name," Wins!");
+      $('.cat').toggleClass('animated hinge');
+ };
 
   kittie.attack(doggie);
-  if (doggie.health > 0) {
-    doggie.attack(kittie);
-  }else if (doggie.health <= 0){
-    doggie.health=" Needs a Vet!";
-  };
-
+    if (doggie.health <= 0){
+      $('#dogster').empty().append(doggie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
+      $('#catster').empty().append(kittie.name," Wins!");
+      $('.dog').toggleClass('animated hinge');
+    };
 });

@@ -84,13 +84,13 @@ $('#coon').hover(function(event) {
 var sam = new Good ({
   name: "Sam",
   breed: "Golden Retriever",
-  motto: "Run Wild",
+  motto: "You are tough. I am tougher.",
 });
 
 var lucy = new Good ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "You are tough. I am tougher.",
+  motto: "I am the Alpha and the Omega.",
 });
 
 var riley = new Good ({
@@ -157,24 +157,18 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
-  }else if (kittie.health <= 0){
-    kittie.health=" Needs a Vet!";
-
-    if (kittie.health=" Needs a Vet!") {
-      $('.cat').toggleClass('animated hinge');
+  } else if (kittie.health <= 0){
+      $('#catster').empty().append(kittie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
       $('#dogster').empty().append(doggie.name," Wins!");
-    };
-  };
+      $('.cat').toggleClass('animated hinge');
+ };
 
   kittie.attack(doggie);
-  if (doggie.health > 0) {
-    doggie.attack(kittie);
-  }else if (doggie.health <= 0){
-    doggie.health=" Needs a Vet!";
-
-    if (doggie.health=" Needs a Vet!") {
-      $('.dog').toggleClass('animated hinge');
+    if (doggie.health <= 0){
+      $('#dogster').empty().append(doggie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
+      $('.dog').toggleClass('animated hinge');
     };
-  };
 });
