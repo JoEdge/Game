@@ -17,20 +17,20 @@ $('.tic a').click(function(event) {
 });
 
 //Constructor for dogs
-var Good = function(options) {
+var Animal = function(options) {
   var options = options || {};
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
     this.health = 100;
-    this.attack = function(cat) {
-     return cat.health = cat.health - _.random (0,25);
+    this.attack = function(animal) {
+     return animal.health = animal.health - _.random (0,25);
     };
 
-    this.stats = function(dog){
+    this.stats = function(animal){
       return 'NAME: ' + this.name + '</br>'+ 'BREED: ' + this.breed + '</br>' + 'MOTTO: ' + this.motto;
     };
-
+//each animals stats will appear on page
 $('#golden').hover(function(event) {
    event.preventDefault();
     $('.d_stats').empty().append(sam.stats());
@@ -45,23 +45,6 @@ $('#shitzu').hover(function(event) {
    event.preventDefault();
     $('.d_stats').empty().append(riley.stats());
   });
-
-};
-
-//constructor for cats
-var Bad = function(options) {
-  var options = options || {};
-    this.name = options.name;
-    this.breed = options.breed;
-    this.motto = options.motto;
-    this.health = 100;
-    this.attack = function(dog) {
-      return dog.health = dog.health - _.random(0,25);
-    };
-
-    this.stats = function(cat){
-      return 'NAME: ' + this.name + '</br>'+ 'BREED: ' + this.breed + '</br>' + 'MOTTO: ' + this.motto;
-    };
 
 $('#persian').hover(function(event) {
    event.preventDefault();
@@ -81,38 +64,38 @@ $('#coon').hover(function(event) {
 };
 
 //Instances for GOOD guys
-var sam = new Good ({
+var sam = new Animal ({
   name: "Sam",
   breed: "Golden Retriever",
   motto: "You are tough. I am tougher.",
 });
 
-var lucy = new Good ({
+var lucy = new Animal ({
   name: "Lucy",
   breed: "Labrador",
   motto: "I am the Alpha and the Omega.",
 });
 
-var riley = new Good ({
+var riley = new Animal ({
   name: "Riley",
   breed: "Shi-Tzu",
   motto: "Kill or be killed.",
 });
 
 //Instances for BAD guys
-var sheba = new Bad ({
+var sheba = new Animal ({
   name: "Sheba",
   breed: "Persian",
   motto: "Finicky is fine",
 });
 
-var mr_snuggles = new Bad ({
+var mr_snuggles = new Animal ({
   name: "Mr. Snuggles",
   breed: "Alley Cat",
   motto: "Pure bloods suck.",
 });
 
-var princess = new Bad ({
+var princess = new Animal ({
   name: "Princess Fluffy-Pants",
   breed: "Maine Coon",
   motto: "Kill them all and let God sort 'em out.",
@@ -127,7 +110,7 @@ $('.pic').on('click', function(event){
   var li_name = $(this).attr('name');
   var li_breed = $(this).attr('id');
 
-  doggie = new Good ({
+  doggie = new Animal ({
     name: li_name,
     breed: li_breed
   });
@@ -140,7 +123,7 @@ $('.tic').on('click', function(event){
     var li_name = $(this).attr('name');
     var li_breed = $(this).attr('id');
 
-  kittie = new Bad ({
+  kittie = new Animal ({
     name: li_name,
     breed: li_breed
   });
@@ -163,7 +146,7 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('#dogster').empty().append(doggie.name," Wins!");
       $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
- };
+    };
 
   kittie.attack(doggie);
     if (doggie.health <= 0){
