@@ -22,7 +22,7 @@ var Good = function(options) {
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
-    this.health = options.health || 100;
+    this.health = 100;
     this.attack = function(cat) {
      return cat.health = cat.health - _.random (0,25);
     };
@@ -54,9 +54,9 @@ var Bad = function(options) {
     this.name = options.name;
     this.breed = options.breed;
     this.motto = options.motto;
-    this.health = options.health || 100;
+    this.health = 100;
     this.attack = function(dog) {
-      return dog.health = dog.health - _.random(1,25);
+      return dog.health = dog.health - _.random(0,25);
     };
 
     this.stats = function(cat){
@@ -91,7 +91,6 @@ var lucy = new Good ({
   name: "Lucy",
   breed: "Labrador",
   motto: "You are tough. I am tougher.",
-  health: 150,
 });
 
 var riley = new Good ({
@@ -117,7 +116,6 @@ var princess = new Bad ({
   name: "Princess Fluffy-Pants",
   breed: "Maine Coon",
   motto: "Kill them all and let God sort 'em out.",
-  health: 110,
 });
 
 //choose your players
@@ -161,6 +159,11 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
     kittie.attack(doggie);
   }else if (kittie.health <= 0){
     kittie.health=" Needs a Vet!";
+
+    if (kittie.health=" Needs a Vet!") {
+      $('.cat').toggleClass('animated hinge');
+      $('#dogster').empty().append(doggie.name," Wins!");
+    };
   };
 
   kittie.attack(doggie);
@@ -168,6 +171,10 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
     doggie.attack(kittie);
   }else if (doggie.health <= 0){
     doggie.health=" Needs a Vet!";
-  };
 
+    if (doggie.health=" Needs a Vet!") {
+      $('.dog').toggleClass('animated hinge');
+      $('#catster').empty().append(kittie.name," Wins!");
+    };
+  };
 });
