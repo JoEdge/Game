@@ -161,6 +161,7 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('#catster').empty().append(kittie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#dogster').empty().append(doggie.name," Wins!");
+      $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
  };
 
@@ -169,6 +170,7 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('#dogster').empty().append(doggie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
+      $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
     };
 });
