@@ -3,10 +3,12 @@
   $( window ).load(function() {
 
 //click to enter backyard
+$('.gameOn').hide();
 $('#enter').on('click', function(event){
   event.preventDefault();
-  $('.door').toggleClass('animated zoomOut');
   $('.door').remove();
+  $('.gameOn').show();
+
 });
 
 //Click thumbnail photos to appear in larger div

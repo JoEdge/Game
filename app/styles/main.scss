@@ -17,7 +17,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url(http://t1.gstatic.com/images?q=tbn:ANd9GcS3fgYHx-v9gwc-VkrmpuPHLUWIJSt1Bn1ApR6r7nDLPpMRKjZ4) no-repeat center center;
+  background: url(https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQpPePXpexT7NsfOQJkS2zi6XnRsj9uWI5ZhXY9klnQhCyfG9Wn) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -26,12 +26,16 @@ body {
   #enter {
     width: 20%;
     height: 60px;
+    margin-left: 40%;
+    margin-top: 23%;
     font-size: 20px;
+    vertical-align: middle;
   }
 }
 
 .gameOn {
   position: relative;
+  width: 100%;
   background: url(http://www.tatouagedesigns.com/photos/22164P-2T.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
