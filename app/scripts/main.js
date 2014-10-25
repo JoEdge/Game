@@ -1,4 +1,14 @@
 (function() {
+  $( document ).ready(function() {
+  $( window ).load(function() {
+
+//click to enter backyard
+$('#enter').on('click', function(event){
+  event.preventDefault();
+  $('.door').toggleClass('animated zoomOut');
+  $('.door').remove();
+});
+
 //Click thumbnail photos to appear in larger div
 $('.pic a').click(function(event) {
     event.preventDefault();
@@ -155,5 +165,7 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
     }
+});
+});
 });
 }());
