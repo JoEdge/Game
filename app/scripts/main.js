@@ -1,3 +1,4 @@
+//Page prep
 (function() {
   $( document ).ready(function() {
   $( window ).load(function() {
@@ -139,7 +140,6 @@ $('.tic').on('click', function(event){
     name: li_name,
     breed: li_breed
   });
-
 });
 
 //Start the fight
@@ -168,6 +168,8 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('.cat').toggleClass('animated hinge');
     }
 });
+
+//closure of page prep
 });
 });
 }());

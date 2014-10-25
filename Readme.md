@@ -1,1 +1,1 @@
-Turn based game
+Dogs vs Cats turn based game.
