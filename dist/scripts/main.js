@@ -1,4 +1,4 @@
-
+(function() {
 //Click thumbnail photos to appear in larger div
 $('.pic a').click(function(event) {
     event.preventDefault();
@@ -154,5 +154,6 @@ $('#catster').empty().append(kittie.name," ", kittie.health);
       $('#dogster').empty().append(doggie.name," Wins!");
       $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
-    };
+    }
 });
+}());

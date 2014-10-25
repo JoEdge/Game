@@ -1,12 +1,16 @@
  // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+//Fonts
+$english: 'IM Fell English SC', serif;
+$sancreek: 'Sancreek', cursive;
+$jacques: 'Jacques Francois Shadow', cursive;
+
 
 // Custom Styles
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-family: $english;
+  color: green;
   background: url(http://www.tatouagedesigns.com/photos/22164P-2T.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,20 +22,28 @@ body {
   margin-right: auto;
   width: 1000px;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 25px;
   text-align: center;
   line-height: 30px;
   padding: 60px;
 
   h1 {
-    font-size: 100px;
+    font-family: $jacques;
+    font-size: 80px;
     color: black;
     text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e;
   }
 
+  h2 {
+    font-family: $sancreek;
+    font-size: 50px;
+    color: red;
+  }
+}
 .left {
   float: left;
   width: 350px;
+
 //large dog image
   .dog {
     float: left;
@@ -71,6 +83,7 @@ body {
   float: right;
   width: 350px;
   height: 500px;
+
 //large cat image
   .cat {
     float: right;
@@ -103,5 +116,4 @@ body {
       }
     }
   }
-}
 }
