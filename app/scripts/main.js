@@ -152,6 +152,7 @@ $('#catster').empty().append(kittie.name + ": " + kittie.health);
   doggie.attack(kittie);
   if (kittie.health > 0) {
     kittie.attack(doggie);
+  }
 
     if (kittie.health <= 0) {
       $('#catster').empty().append(kittie.name," Needs a Vet!");
@@ -160,14 +161,15 @@ $('#catster').empty().append(kittie.name + ": " + kittie.health);
       $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
 
-    }else if (doggie.health <= 0) {
+    }
+
+    if (doggie.health <= 0) {
       $('#dogster').empty().append(doggie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
       $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
     }
-  }
 });
 
 //closure of page prep
