@@ -146,8 +146,8 @@ $('.tic').on('click', function(event){
 $('#fight').on('click', function(event){
   event.preventDefault();
 
-$('#dogster').empty().append(doggie.name," ", doggie.health);
-$('#catster').empty().append(kittie.name," ", kittie.health);
+$('#dogster').empty().append(doggie.name,": ", doggie.health);
+$('#catster').empty().append(kittie.name,": ", kittie.health);
 
   doggie.attack(kittie);
   if (kittie.health > 0) {
