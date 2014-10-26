@@ -80,32 +80,32 @@ $('#coon').hover(function(event) {
 var sam = new Animal ({
   name: "Sam",
   breed: "Golden Retriever",
-  motto: "You are tough. I am tougher.",
+  motto: "It ain't braggin' if you can back it up.",
 });
 
 var lucy = new Animal ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "I am the Alpha and the Omega.",
+  motto: "You aren't good enought to be my sparring partner.",
 });
 
 var riley = new Animal ({
   name: "Riley",
   breed: "Shi-Tzu",
-  motto: "Kill or be killed.",
+  motto: "Get your popcorn ready, 'cause I'm gonna put on a show.",
 });
 
 //Instances for BAD guys
 var sheba = new Animal ({
   name: "Sheba",
   breed: "Persian",
-  motto: "Finicky is fine",
+  motto: "I'm not arrogant, I'm good.",
 });
 
 var mr_snuggles = new Animal ({
   name: "Mr. Snuggles",
   breed: "Alley Cat",
-  motto: "Pure bloods suck.",
+  motto: "I’m just looking around to see who’s gonna finish second.",
 });
 
 var princess = new Animal ({
