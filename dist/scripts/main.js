@@ -86,13 +86,13 @@ var sam = new Animal ({
 var lucy = new Animal ({
   name: "Lucy",
   breed: "Labrador",
-  motto: "You aren't good enought to be my sparring partner.",
+  motto: "You aren't good enough to be my sparring partner.",
 });
 
 var riley = new Animal ({
   name: "Riley",
   breed: "Shi-Tzu",
-  motto: "Get your popcorn ready, 'cause I'm gonna put on a show.",
+  motto: "Get your popcorn ready, 'cause I'm gonna put on a show."
 });
 
 //Instances for BAD guys
@@ -111,7 +111,7 @@ var mr_snuggles = new Animal ({
 var princess = new Animal ({
   name: "Princess Fluffy-Pants",
   breed: "Maine Coon",
-  motto: "Kill them all and let God sort 'em out.",
+  motto: "Kill them all and let God sort 'em out."
 });
 
 //choose your players
@@ -153,20 +153,21 @@ $('#catster').empty().append(kittie.name + ": " + kittie.health);
   if (kittie.health > 0) {
     kittie.attack(doggie);
 
+    if (kittie.health <= 0) {
+      $('#catster').empty().append(kittie.name," Needs a Vet!");
+      $('#fight').toggleClass('animated flipOutX');
+      $('#dogster').empty().append(doggie.name," Wins!");
+      $('.dog').toggleClass('animated flip');
+      $('.cat').toggleClass('animated hinge');
+
     }else if (doggie.health <= 0) {
       $('#dogster').empty().append(doggie.name," Needs a Vet!");
       $('#fight').toggleClass('animated flipOutX');
       $('#catster').empty().append(kittie.name," Wins!");
       $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
-
-    }else if (kittie.health <= 0) {
-      $('#catster').empty().append(kittie.name," Needs a Vet!");
-      $('#fight').toggleClass('animated flipOutX');
-      $('#dogster').empty().append(doggie.name," Wins!");
-      $('.dog').toggleClass('animated flip');
-      $('.cat').toggleClass('animated hinge');
     }
+  }
 });
 
 //closure of page prep
