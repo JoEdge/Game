@@ -7,6 +7,7 @@
 $('.gameOn').hide();
 $('#enter').on('click', function(event){
   event.preventDefault();
+  $('#refresh').hide();
   $('.door').remove();
   $('.gameOn').show();
 
@@ -160,7 +161,7 @@ $('#catster').empty().append(kittie.name + ": " + kittie.health);
       $('#dogster').empty().append(doggie.name," Wins!");
       $('.dog').toggleClass('animated flip');
       $('.cat').toggleClass('animated hinge');
-
+      $('#refresh').delay(2500).show('animated flipInX');
     }
 
     if (doggie.health <= 0) {
@@ -169,9 +170,14 @@ $('#catster').empty().append(kittie.name + ": " + kittie.health);
       $('#catster').empty().append(kittie.name," Wins!");
       $('.cat').toggleClass('animated flip');
       $('.dog').toggleClass('animated hinge');
+      $('#refresh').delay(2500).show('animated flipInX');
     }
 });
 
+//Play again button
+$('#refresh').on('click', function(){
+  location.reload();
+});
 //closure of page prep
 });
 });
