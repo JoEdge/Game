@@ -4,14 +4,14 @@
 
 ####How to use it
 
-Clone my repo
--Run npm install
--Run bower install
+- Clone my repo
+- Run npm install
+- Run bower install
 
 ####List of any libraries used
--jQuery
--Underscore
--Sass
--Animate.css
--Google/fonts
--Google/images
+- jQuery
+- Underscore
+- Sass
+- Animate.css
+- Google/fonts
+- Google/images
