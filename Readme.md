@@ -8,7 +8,7 @@
 - Run npm install
 - Run bower install
 
-####List of any libraries used
+####List of libraries used
 - jQuery
 - Underscore
 - Sass
